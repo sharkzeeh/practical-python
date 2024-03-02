@@ -222,10 +222,15 @@ values include `'ascii'` and `'latin1'`.
 Raw strings are string literals with an uninterpreted backslash. They
 are specified by prefixing the initial quote with a lowercase "r".
 
+Compare:
 ```python
 >>> rs = r'c:\newdata\test' # Raw (uninterpreted backslash)
->>> rs
-'c:\\newdata\\test'
+>>> print(rs)
+'c:\newdata\test'
+>>> rss = 'c:\newdata\test'
+>>> print(rss)
+c:
+wdata  est
 ```
 
 The string is the literal text enclosed inside, exactly as typed.
