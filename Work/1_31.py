@@ -21,5 +21,6 @@ def portfolio_cost(filename):
             total_cost += n_shares * price
     return total_cost
 
-cost = portfolio_cost('./Data/missing.csv')
-print(f'Total cost: {cost:.2f}')
+if __name__ == '__main__':
+    cost = portfolio_cost('./Data/missing.csv')
+    print(f'Total cost: {cost:.2f}')
