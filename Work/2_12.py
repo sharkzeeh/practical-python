@@ -59,7 +59,8 @@ if __name__ == '__main__':
 
     headers = ('Name', 'Shares', 'Price', 'Change')
     print('{:>10s} {:>10s} {:>10s} {:>10s}'.format(*headers))
-    print(f'{" ".join(['-' * 10] * 4)}')
+    div = '-' * 10
+    print(f'{" ".join([div] * 4)}')
     for stock in report:
         stock = (stock[0], stock[1], '$' + f'{stock[2]:.2f}', stock[3])
         print('{:>10} {:>10d} {:>10s} {:>10.2f}'.format(*stock))
