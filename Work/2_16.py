@@ -13,7 +13,7 @@ def portfolio_cost(filename):
                 record = dict(zip(headers, row))
                 total_cost += int(record['shares']) * float(record['price'])
             except ValueError as e:
-                print(f"Row {rowno}: Coudln't convert {row}")
+                print(f"Row {rowno}: Couldn't convert {row}")
                 continue
     return total_cost
 

@@ -1,19 +1,20 @@
 # report.py
-
-import fileparse
+#
+# Exercise 3.12: Using your library module
+import fileparse_3_12 as fileparse
 
 def read_portfolio(filename):
     '''
     Read a stock portfolio file into a list of dictionaries with keys
     name, shares, and price.
     '''
-    return fileparse.parse_csv(filename, select=['name','shares','price'], types=[str,int,float])
+    return fileparse.parse_csv(filename, select=['name', 'shares', 'price'], types=[str, int, float])
 
 def read_prices(filename):
     '''
     Read a CSV file of price data into a dict mapping names to prices.
     '''
-    return dict(fileparse.parse_csv(filename,types=[str,float], has_headers=False))
+    return dict(fileparse.parse_csv(filename, types=[str, float], has_headers=False))
 
 def make_report_data(portfolio,prices):
     '''
@@ -38,7 +39,7 @@ def print_report(reportdata):
     for row in reportdata:
         print('%10s %10d %10.2f %10.2f' % row)
 
-def portfolio_report(portfoliofile,pricefile):
+def portfolio_report(portfoliofile, pricefile):
     '''
     Make a stock report given portfolio and price data files.
     '''
@@ -47,10 +48,10 @@ def portfolio_report(portfoliofile,pricefile):
     prices = read_prices(pricefile)
 
     # Create the report data
-    report = make_report_data(portfolio, prices)
+    report = make_report_data(portfolio,prices)
 
     # Print it out
     print_report(report)
 
-portfolio_report('../../Work/Data/portfolio.csv',
-                 '../../Work/Data/prices.csv')
+if __name__ == '__main__':
+    portfolio_report('Data/portfolio.csv', 'Data/prices.csv')
