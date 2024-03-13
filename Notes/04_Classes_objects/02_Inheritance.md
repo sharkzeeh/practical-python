@@ -289,13 +289,13 @@ class TableFormatter:
         '''
         Emit the table headings.
         '''
-	raise NotImplementedError()
+        raise NotImplementedError()
 
     def row(self, rowdata):
         '''
         Emit a single row of table data.
         '''
-	raise NotImplementedError()
+        raise NotImplementedError()
 ```
 
 This class does nothing, but it serves as a kind of design specification for
@@ -320,7 +320,7 @@ def print_report(reportdata, formatter):
         formatter.row(rowdata)
 ```
 
-Since you added an argument to print_report(), you're going to need to modify the
+Since you added an argument to `print_report()`, you're going to need to modify the
 `portfolio_report()` function as well.  Change it so that it creates a `TableFormatter`
 like this:
 
