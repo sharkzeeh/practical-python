@@ -1,7 +1,5 @@
 # pcost.py
-#
-# Exercise 3.18: Fixing existing functions
-import fileparse
+
 import sys
 import report
 
@@ -10,7 +8,7 @@ def portfolio_cost(filename):
     Computes the total cost (shares*price) of a portfolio file
     '''
     portfolio = report.read_portfolio(filename)
-    total_cost = sum((s.cost() for s in portfolio))
+    total_cost = sum((s.cost for s in portfolio))
     return total_cost
 
 # Main function
