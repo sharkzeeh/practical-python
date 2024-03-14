@@ -1,6 +1,6 @@
 # tableformat.py
 #
-# Exercise 4.7: Polymorphism in Action
+# Exercise 4.10: An example of using getattr()
 
 class TableFormatter:
     def headings(self, headers):
@@ -69,3 +69,21 @@ def create_formatter(name):
     elif name == 'html':
         formatter = HTMLTableFormatter()
     return formatter
+
+def print_table(dictdata, columns, formatter):
+    '''
+    Make a nicely formatted table from a list of objects and attribute names.
+    '''
+    formatter.headings(columns)
+    for obj in dictdata:
+        select = {getattr(obj, col) for col in columns if hasattr(obj, col)}
+        formatter.row(select)
+
+
+if __name__ == '__main__':
+    import report
+    portfolio = report.read_portfolio('../Data/portfolio.csv')
+    # print(portfolio)
+
+    formatter = TextTableFormatter()
+    print_table(portfolio, ['name', 'shares'], formatter)

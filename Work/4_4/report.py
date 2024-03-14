@@ -3,6 +3,8 @@
 # Exercise 3.18: Fixing existing functions
 import fileparse
 import sys
+from stock import Stock
+
 
 def read_portfolio(filename):
     '''
@@ -10,7 +12,9 @@ def read_portfolio(filename):
     name, shares, and price.
     '''
     with open(filename) as f:
-        return fileparse.parse_csv(f, select=['name', 'shares', 'price'], types=[str, int, float])
+        dictdata = fileparse.parse_csv(f, select=['name', 'shares', 'price'], types=[str, int, float])
+
+    return [Stock(d['name'], d['shares'], d['price']) for d in dictdata] 
 
 def read_prices(filename):
     '''
@@ -19,16 +23,16 @@ def read_prices(filename):
     with open(filename) as f:
         return dict(fileparse.parse_csv(f, types=[str, float], has_headers=False))
 
-def make_report_data(portfolio,prices):
+def make_report_data(portfolio, prices):
     '''
     Make a list of (name, shares, price, change) tuples given a portfolio list
     and prices dictionary.
     '''
     rows = []
     for stock in portfolio:
-        current_price = prices[stock['name']]
-        change = current_price - stock['price']
-        summary = (stock['name'], stock['shares'], current_price, change)
+        current_price = prices[stock.name]
+        change = current_price - stock.price
+        summary = (stock.name, stock.shares, current_price, change)
         rows.append(summary)
     return rows
 
