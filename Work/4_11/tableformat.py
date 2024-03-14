@@ -1,6 +1,7 @@
 # tableformat.py
 #
 # Exercise 4.10: An example of using getattr()
+# Exercise 4.11: Defining a custom exception
 
 class TableFormatter:
     def headings(self, headers):
@@ -60,6 +61,9 @@ class HTMLTableFormatter(TableFormatter):
         row_formatted = "".join([f'<td>{elem}</td>' for elem in rowdata])
         self.wrap_tr(row_formatted)
 
+class FormatError(Exception):
+    pass
+
 
 def create_formatter(name):
     if name == 'txt':
@@ -68,6 +72,8 @@ def create_formatter(name):
         formatter = CSVTableFormatter()
     elif name == 'html':
         formatter = HTMLTableFormatter()
+    else:
+        raise FormatError(f"Unknown table format {name}")
     return formatter
 
 def print_table(dictdata, columns, formatter):
@@ -87,3 +93,5 @@ if __name__ == '__main__':
 
     formatter = TextTableFormatter()
     print_table(portfolio, ['name', 'shares'], formatter)
+
+    create_formatter("xls")
