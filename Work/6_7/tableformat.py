@@ -1,4 +1,7 @@
 # tableformat.py
+#
+# Exercise 4.10: An example of using getattr()
+# Exercise 4.11: Defining a custom exception
 
 class TableFormatter:
     def headings(self, headers):
