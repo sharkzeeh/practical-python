@@ -1,6 +1,7 @@
 # fileparse.py
 #
-# Exercise 3.6: Working without Headers
+# Exercise 3.7: Picking a different column delimiter
+
 import csv
 
 def parse_csv(filename, select=None, types=None, has_headers=True, delimiter=','):

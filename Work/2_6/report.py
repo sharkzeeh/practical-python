@@ -1,6 +1,7 @@
 # report.py
 #
 # Exercise 2.6: Dictionaries as a container
+
 import csv, sys, pprint
 
 printer = pprint.PrettyPrinter()

@@ -1,6 +1,5 @@
 # filematch.py
-#
-# Exercise 6.9: Setting up a more complex pipeline
+
 import types, csv
 
 def filematch(lines, substr):
@@ -19,6 +18,5 @@ if __name__ == '__main__':
     rows = csv.reader(lines)
     for row in rows:
         print(row)
-
     # example output
     # ['CAT', '78.03', '6/11/2007', '09:30.43', '-0.49', '78.32', '78.03', '77.99', '175984']

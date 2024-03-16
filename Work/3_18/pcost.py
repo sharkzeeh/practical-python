@@ -1,6 +1,7 @@
 # pcost.py
 #
 # Exercise 3.18: Fixing existing functions
+
 import fileparse
 import sys
 

@@ -1,6 +1,7 @@
 # report.py
 #
 # Exercise 2.7: Finding out if you can retire
+
 import csv, pprint
 
 printer = pprint.PrettyPrinter()

@@ -1,8 +1,9 @@
 # report.py
 
-import fileparse
+import fileparse, tableformat
 import sys
 from stock import Stock
+from portfolio import Portfolio
 
 
 def read_portfolio(filename):
@@ -13,7 +14,8 @@ def read_portfolio(filename):
     with open(filename) as f:
         dictdata = fileparse.parse_csv(f, select=['name', 'shares', 'price'], types=[str, int, float])
 
-    return [Stock(d['name'], d['shares'], d['price']) for d in dictdata] 
+    portfolio = [Stock(d['name'], d['shares'], d['price']) for d in dictdata]
+    return Portfolio(portfolio)
 
 def read_prices(filename):
     '''
@@ -35,17 +37,16 @@ def make_report_data(portfolio, prices):
         rows.append(summary)
     return rows
 
-def print_report(reportdata):
+def print_report(reportdata, formatter):
     '''
-    Print a nicely formated table from a list of (name, shares, price, change) tuples.
+    Print a nicely formatted table from a list of (name, shares, price, change) tuples.
     '''
-    headers = ('Name','Shares','Price','Change')
-    print('%10s %10s %10s %10s' % headers)
-    print(('-'*10 + ' ')*len(headers))
-    for row in reportdata:
-        print('%10s %10d %10.2f %10.2f' % row)
+    formatter.headings(['Name','Shares','Price','Change'])
+    for name, shares, price, change in reportdata:
+        rowdata = [ name, str(shares), f'{price:0.2f}', f'{change:0.2f}' ]
+        formatter.row(rowdata)
 
-def portfolio_report(portfoliofile, pricefile):
+def portfolio_report(portfoliofile, pricefile, fmt='txt'):
     '''
     Make a stock report given portfolio and price data files.
     '''
@@ -54,14 +55,15 @@ def portfolio_report(portfoliofile, pricefile):
     prices = read_prices(pricefile)
 
     # Create the report data
-    report = make_report_data(portfolio,prices)
+    report = make_report_data(portfolio, prices)
 
     # Print it out
-    print_report(report)
+    formatter = tableformat.create_formatter(fmt)
+    print_report(report, formatter)
 
 # Main function
 def main(argv):
-    if len(argv) != 3:
+    if len(argv) < 3:
         print('Pass portfolio and prices filename')
         sys.exit(1)
     portfolio_report(*argv[1:])
@@ -69,8 +71,8 @@ def main(argv):
 
 if __name__ == '__main__':
     # 1
-    main(['report.py', '../Data/portfolio.csv', '../Data/prices.csv'])
+    main(['report.py', '../Data/portfolio.csv', '../Data/prices.csv', 'csv'])
 
     # 2 cmd line
-    ## $ python3 report.py ../Data/portfolio.csv ../Data/prices.csv
+    ## $ python3 report.py ../Data/portfolio.csv ../Data/prices.csv csv
     # main(sys.argv)

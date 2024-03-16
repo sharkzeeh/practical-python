@@ -1,6 +1,7 @@
 # fileparse.py
 #
 # Exercise 3.4: Building a Column Selector
+
 import csv
 
 def parse_csv(filename, select=None):

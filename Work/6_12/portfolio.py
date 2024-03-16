@@ -1,6 +1,4 @@
 # portfolio.py
-#
-# Exercise 6.3: Making a more proper container
 
 class Portfolio:
 

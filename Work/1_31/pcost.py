@@ -1,6 +1,7 @@
 # pcost.py
 #
 # Exercise 1.31: Error handling
+
 def portfolio_cost(filename):
     total_cost = 0
     with open(filename) as fh:

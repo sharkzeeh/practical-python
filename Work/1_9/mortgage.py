@@ -1,6 +1,7 @@
 # mortgage.py
 #
 # Exercise 1.9: Making an Extra Payment Calculator
+
 principal = 500000.0
 rate = 0.05
 payment = 2684.11

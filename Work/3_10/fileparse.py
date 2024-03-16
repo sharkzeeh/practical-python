@@ -1,6 +1,9 @@
 # fileparse.py
 #
-# Exercise 3.8 - 3.10: Exceptions
+# Exercise 3.8: Raising exceptions
+# Exercise 3.9: Catching exceptions
+# Exercise 3.10: Silencing Errors
+
 import csv
 
 def parse_csv(filename, select=None, types=None, has_headers=True, delimiter=',', silence_errors=False):

@@ -1,6 +1,7 @@
 # report.py
 #
 # Exercise 2.5: List of Dictionaries
+
 import csv, sys, pprint
 
 printer = pprint.PrettyPrinter()

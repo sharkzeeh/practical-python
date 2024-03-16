@@ -1,6 +1,8 @@
 # report.py
-import csv
+#
+# Exercise 3.2: Creating a top-level function for program execution
 
+import csv
 
 def read_portfolio(filename):
     '''

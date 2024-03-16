@@ -1,6 +1,7 @@
 # fileparse.py
 #
 # Exercise 3.6: Working without Headers
+
 import csv
 
 def parse_csv(filename, select=None, types=None, has_headers=True):

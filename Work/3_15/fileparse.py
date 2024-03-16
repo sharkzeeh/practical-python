@@ -1,6 +1,5 @@
 # fileparse.py
-#
-# Solution to Exercise 3.12
+
 import csv
 
 def parse_csv(filename, select=None, types=None, has_headers=True, delimiter=',', silence_errors=False):

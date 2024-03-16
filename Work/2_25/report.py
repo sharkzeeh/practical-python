@@ -1,6 +1,7 @@
 # report.py
 #
 # Exercise 2.25: Making dictionaries
+
 import csv, sys, pprint
 
 def read_portfolio(filename):

@@ -1,6 +1,9 @@
 # stock.py
 #
-# Exercise 5.1 - 5.4
+# Exercise 5.1: Representation of Instances
+# Exercise 5.2: Modification of Instance Data
+# Exercise 5.3: The role of classes
+# Exercise 5.4: Bound methods
 
 class Stock:
 

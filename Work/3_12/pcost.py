@@ -1,6 +1,7 @@
 # pcost.py
 #
 # Exersice 3.14: Using more library imports
+
 import fileparse
 
 def portfolio_cost(filename):

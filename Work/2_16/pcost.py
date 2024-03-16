@@ -1,6 +1,7 @@
 # pcost.py
 #
 # Exercise 2.16: Using the zip() function
+
 import csv, sys
 
 def portfolio_cost(filename):

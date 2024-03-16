@@ -1,6 +1,7 @@
 # report.py
 #
 # Exercise 2.18: Tabulating with Counters
+
 import csv, pprint
 
 printer = pprint.PrettyPrinter()

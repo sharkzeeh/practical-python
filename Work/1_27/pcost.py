@@ -1,6 +1,7 @@
 # pcost.py
 #
 # Exercise 1.27: Reading a data file
+
 with open('../Data/portfolio.csv') as fh:
     _headers = next(fh)
     total_cost = 0

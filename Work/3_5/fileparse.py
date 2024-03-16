@@ -1,6 +1,7 @@
 # fileparse.py
 #
 # Exercise 3.5: Performing Type Conversion
+
 import csv
 
 def parse_csv(filename, select=None, types=[str, int, float]):

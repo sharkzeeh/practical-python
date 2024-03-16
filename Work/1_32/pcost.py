@@ -1,6 +1,7 @@
 # pcost.py
 #
 # Exercise 1.32: Using a library function
+
 import csv
 
 def portfolio_cost(filename):

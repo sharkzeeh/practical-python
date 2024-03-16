@@ -1,6 +1,7 @@
 # report.py
 #
 # Exercise 3.12: Using your library module
+
 import fileparse
 
 def read_portfolio(filename):

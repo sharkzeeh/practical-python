@@ -1,6 +1,7 @@
 # pcost.py
 #
 # Exercise 1.30: Turning a script into a function
+
 def portfolio_cost(filename):
     total_cost = 0
     with open(filename) as fh:

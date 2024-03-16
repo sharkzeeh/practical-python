@@ -1,6 +1,7 @@
 # fileparse.py
 #
 # Exercise 3.3: Reading CSV Files
+
 import csv
 
 def parse_csv(filename):

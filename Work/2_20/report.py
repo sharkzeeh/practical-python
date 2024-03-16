@@ -1,6 +1,7 @@
 # report.py
 #
 # Exercise 2.20: Sequence Reductions
+
 import csv, sys, pprint
 
 def read_portfolio(filename):

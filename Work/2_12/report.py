@@ -1,6 +1,7 @@
 # report.py
 #
 # Exercise 2.12: Formatting Challenge
+
 import csv, pprint
 
 printer = pprint.PrettyPrinter()

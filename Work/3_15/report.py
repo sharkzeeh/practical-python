@@ -1,6 +1,8 @@
 # report.py
 #
-# Exercise 3.15 - 3.16: main function
+# Exercise 3.15: main() functions
+# Exercise 3.16: Making Scripts
+
 import fileparse
 import sys
 

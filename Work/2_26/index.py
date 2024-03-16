@@ -1,6 +1,7 @@
 # index.py
 #
 # Exercise 2.26: The Big Picture
+
 import csv, sys, pprint
 
 def read_index(filename):

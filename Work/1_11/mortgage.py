@@ -1,6 +1,7 @@
 # mortgage.py
 #
 # Exercise 1.11: Bonus
+
 principal = 500000.0
 rate = 0.05
 payment = 2684.11
