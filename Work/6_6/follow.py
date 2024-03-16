@@ -14,6 +14,7 @@ def follow(filename):
                 continue 
             yield line
 
+
 if __name__ == '__main__':
     for line in follow('../Data/stocklog.csv'):
         fields = line.split(',')
