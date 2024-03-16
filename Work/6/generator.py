@@ -1,5 +1,6 @@
-# A generator is any function that uses the yield statement.
+# Reading 6.2 Customizing Iteration
 
+# A generator is any function that uses the yield statement.
 # yield produces a value, but suspends the function execution.
 # The function resumes on next call to __next__().
 

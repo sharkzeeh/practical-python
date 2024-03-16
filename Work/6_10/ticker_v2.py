@@ -12,13 +12,10 @@ def parse_stock_data(lines):
     rows = make_dicts(rows, ['name', 'price', 'change'])
     return rows
 
-def select_colums(rows, indices=None):
+def select_colums(rows, indices):
     for row in rows:
-        if indices:
-            select = [row[idx] for idx in indices]
-            yield select
-        else:
-            yield row
+        select = [row[idx] for idx in indices]
+        yield select
 
 def convert_types(rows, types):
     for row in rows:

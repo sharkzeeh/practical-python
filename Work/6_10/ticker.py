@@ -10,13 +10,10 @@ def parse_stock_data(lines):
     rows = select_colums(rows, [0, 1, 4])
     return rows
 
-def select_colums(rows, indices=None):
+def select_colums(rows, indices):
     for row in rows:
-        if indices:
-            select = [row[idx] for idx in indices]
-            yield select
-        else:
-            yield row
+        select = [row[idx] for idx in indices]
+        yield select
 
 
 if __name__ == '__main__':

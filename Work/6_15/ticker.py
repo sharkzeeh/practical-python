@@ -17,22 +17,16 @@ def parse_stock_data(lines: t.Generator):
     return rows
 
 def select_colums(rows: t.Generator, indices: t.List):
-    for row in rows:
-        select = [row[idx] for idx in indices]
-        yield select
+    return ([row[idx] for idx in indices] for row in rows)
 
 def convert_types(rows: t.Generator, types: t.List):
-    for row in rows:
-        yield [func(val) for func, val in zip(types, row)]
+    return ([func(val) for func, val in zip(types, row)] for row in rows)
 
 def make_dicts(rows: t.Generator, headers: t.List):
-    for row in rows:
-        yield dict(zip(headers, row))
+    return (dict(zip(headers, row)) for row in rows)
 
 def filter_symbols(rows: t.Generator, names: t.List):
-    for row in rows:
-        if row['name'] in names:
-            yield row
+    return (row for row in rows if row['name'] in names)
 
 def ticker(portfile: str, logfile: str, fmt: str = 'txt'):
     formatter = tableformat.create_formatter(fmt)

@@ -1,3 +1,5 @@
+# Reading: 6.1 Iteration Protocol
+
 # list iterator
 obj = [1, 2, 3]
 
