@@ -1,6 +1,4 @@
 # report.py
-#
-# Exercise 7.11: Class Methods in Practice
 
 import fileparse, tableformat
 import sys
@@ -70,7 +68,7 @@ def main(argv):
 
 if __name__ == '__main__':
     # 1
-    main(['report.py', '../Data/portfolio.csv', '../Data/prices.csv', 'csv'])
+    main(['report.py', '../Data/missing.csv', '../Data/prices.csv', 'csv'])
 
     # 2 cmd line
     ## $ python3 report.py ../Data/portfolio.csv ../Data/prices.csv csv
